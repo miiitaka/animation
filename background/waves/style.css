@@ -1,0 +1,62 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  background: #eee;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.box {
+  background: #fbfcee;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  width: 100%;
+}
+
+.box::after {
+  background: linear-gradient(to bottom, #0000ff, rgba(221, 238, 255, 0) 80%, rgba(255, 255, 255, .5));
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  width: 100%;
+  z-index: 11;
+}
+
+.wave {
+  animation: drift 5000ms infinite linear;
+  background: #0af;
+  border-radius: 43%;
+  height: 200%;
+  margin: -120% 0 0 -50%;
+  opacity: .4;
+  position: absolute;
+  transform-origin: 50% 48%;
+  width: 200%;
+}
+
+.wave.two {
+  animation: drift 10000ms infinite linear;
+  background: #ffff00;
+  opacity: .1;
+}
+
+.wave.three {
+  animation: drift 7000ms infinite linear;
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg) }
+  from { transform: rotate(360deg) }
+}
